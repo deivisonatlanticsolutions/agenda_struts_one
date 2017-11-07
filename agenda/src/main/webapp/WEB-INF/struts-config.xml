@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN" "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+<struts-config>
+	<form-beans>
+	   <form-bean name="helloWorldForm" 	type="com.deivison.strutsone.form.HelloWorldForm"/>
+	   <form-bean name="loginForm" 	type="com.deivison.strutsone.form.LoginForm"/>
+	</form-beans>
+
+	<action-mappings>
+	   <action path="/helloWorld"
+	   		   type="com.deivison.strutsone.action.HelloWorldAction"
+	   		   name="helloWorldForm">
+	  	<forward name="success" path="/helloWorld.jsp"/>
+	   </action>
+	   
+	   <action path="/login"
+	   		   type="com.deivison.strutsone.action.LoginAction"
+	   		   name="loginForm">
+	  	<forward name="success" path="/logado.jsp"/>
+	  	<forward name="error" path="/login.jsp"/>
+	   </action>
+	   
+	    <action path="/logout"
+	   		   type="com.deivison.strutsone.action.LogoutAction">
+	  	<forward name="success" path="/login.jsp"/>
+	   </action>
+	</action-mappings>
+	
+</struts-config>
